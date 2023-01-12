@@ -234,7 +234,7 @@ export default function ToContainer() {
         <div className="main-to-list-scroll">
           <div className="main-to-list">
             {!todoLoading ? (
-              todoData ? (
+              todoData.allTodos.length ? (
                 todoData.allTodos
                   .slice()
                   .reverse()
@@ -346,7 +346,7 @@ export default function ToContainer() {
         <div className="main-to-list-scroll">
           <div className="main-to-list">
             {!tobuyLoading ? (
-              tobuyData ? (
+              tobuyData.allTobuys.length ? (
                 tobuyData.allTobuys
                   .slice()
                   .reverse()

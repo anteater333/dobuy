@@ -1,4 +1,4 @@
-const serverAddr = "http://localhost:4321";
+const serverAddr = process.env.REACT_APP_API_SERVER_ADDR;
 
 export const getTitle = async (): Promise<string> => {
   const response = await (await fetch(`${serverAddr}/`)).json();
