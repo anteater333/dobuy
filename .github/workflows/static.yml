@@ -37,9 +37,8 @@ jobs:
         with:
           # Upload entire repository
           path: './docs'
-      - name: Envs
-        env:
-          REACT_APP_API_SERVER_ADDR: ${{ secrets.REACT_APP_API_SERVER_ADDR }}
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        env:
+          REACT_APP_API_SERVER_ADDR: ${{ secrets.REACT_APP_API_SERVER_ADDR }}
