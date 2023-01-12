@@ -39,6 +39,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        deploy_key: ${{ secrets.GH_ACTIONS_DEPLOY_KEY }}
-        public_branch: gh-pages
+        public_branch: production/gh-pages
         publish_dir: ./webapp/build
