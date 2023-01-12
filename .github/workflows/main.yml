@@ -36,9 +36,13 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './docs'
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-gh-pages@v3
         env:
           REACT_APP_API_SERVER_ADDR: ${{ secrets.REACT_APP_API_SERVER_ADDR }}
+        with:
+          github_token: $
+          publish_branch: production/gh-pages
+          publish_dir: ./docs
