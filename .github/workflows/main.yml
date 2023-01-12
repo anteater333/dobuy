@@ -32,6 +32,7 @@ jobs:
         npm install
         npm run build
       env:
+        CI: false
         REACT_APP_API_SERVER_ADDR: ${{ secrets.REACT_APP_API_SERVER_ADDR }}
 
     - name: Deploy
