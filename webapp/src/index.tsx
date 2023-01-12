@@ -11,6 +11,8 @@ const gqlClient = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+console.log(process.env.REACT_APP_API_SERVER_ADDR);
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
