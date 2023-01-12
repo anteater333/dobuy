@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["production/gh-pages"]
+    branches: [ production/gh-pages ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -20,29 +20,18 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+jobs: 
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+    steps: 
+      - uses: actions/checkout@main
         with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-gh-pages@v3
+          ref: production/gh-pages
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
         env:
           REACT_APP_API_SERVER_ADDR: ${{ secrets.REACT_APP_API_SERVER_ADDR }}
         with:
           github_token: $
-          publish_branch: production/gh-pages
+          publish_branch: gh-pages
           publish_dir: ./docs
