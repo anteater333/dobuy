@@ -1,4 +1,6 @@
-const serverAddr = process.env.REACT_APP_API_SERVER_ADDR;
+const serverAddr = process.env.REACT_APP_API_SERVER_ADDR
+  ? process.env.REACT_APP_API_SERVER_ADDR
+  : "http://anteater.iptime.org:4000";
 
 export const getTitle = async (): Promise<string> => {
   const response = await (await fetch(`${serverAddr}/`)).json();
