@@ -2,6 +2,7 @@ import express from "express";
 import { createHandler } from "graphql-http/lib/use/express";
 import dotenv from "dotenv";
 import cors from "cors";
+import moment from "moment"
 
 // .env
 dotenv.config();
@@ -22,7 +23,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use(function (req, res, next) {
-  console.log(req.url, req.body, res.statusCode);
+  console.log(`REQUEST :: ${req.method} ${req.url} ${moment().format()}`)
+  console.log(req.body, res.statusCode);
+  console.log('=====')
   next();
 });
 
