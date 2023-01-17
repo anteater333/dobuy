@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.use(function (req, res, next) {
   console.log(`REQUEST :: ${req.method} ${req.url} ${moment().format()}`)
-  console.log(req.body, res.statusCode);
+  console.log(req.body, res.statusCode, req.ip);
   console.log('=====')
   next();
 });
@@ -49,7 +49,7 @@ app.post("/", (req, res) => {
   res.json(req.body);
 });
 
-const PORT = 4321;
+const PORT = 4000;
 
 app.listen(PORT, () => {
   console.log(
