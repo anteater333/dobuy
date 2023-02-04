@@ -6,7 +6,7 @@ module.exports = (app) => {
     createProxyMiddleware({
       target: process.env.REACT_APP_API_SERVER_ADDR
         ? process.env.REACT_APP_API_SERVER_ADDR
-        : "http://localhost:8080",
+        : "https://deg.anteater-lab.link/dobuy",
       changeOrigin: true,
       secure: false,
       pathRewrite: { "^/api": "" },
