@@ -1,9 +1,6 @@
-const serverAddr = process.env.REACT_APP_API_SERVER_ADDR
-  ? process.env.REACT_APP_API_SERVER_ADDR
-  : "http://anteater.iptime.org:4000";
 
 export const getTitle = async (): Promise<string> => {
-  const response = await (await fetch(`${serverAddr}/`)).json();
+  const response = await (await fetch(`/api`, {method: 'GET'})).json();
   return response.title;
 };
 
@@ -19,7 +16,7 @@ export const checkGQL = async () => {
   }`;
 
   const res = await (
-    await fetch(`${serverAddr}/graphql`, {
+    await fetch(`/api/graphql`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query }),
