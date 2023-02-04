@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "./logo.svg";
 import logoGql from "./logo-gql.svg";
 import MainScreen from "./screens/MainScreen";
