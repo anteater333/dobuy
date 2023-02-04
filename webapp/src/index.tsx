@@ -7,11 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const gqlClient = new ApolloClient({
-  uri: `${
-    process.env.REACT_APP_API_SERVER_ADDR
-      ? process.env.REACT_APP_API_SERVER_ADDR
-      : "http://anteater.iptime.org:4000"
-  }/graphql`,
+  uri: `/api/graphql`,
   cache: new InMemoryCache(),
 });
 
