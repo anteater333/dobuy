@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/dobuy/static/css/main.2c2c4b67.css",
-    "main.js": "/dobuy/static/js/main.01dae2b4.js",
+    "main.js": "/dobuy/static/js/main.536e1ac1.js",
     "static/js/787.994511a4.chunk.js": "/dobuy/static/js/787.994511a4.chunk.js",
     "static/media/logo.svg": "/dobuy/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/logo-gql.svg": "/dobuy/static/media/logo-gql.3caafeddeb7dab1f0c45ce24993078e7.svg",
     "index.html": "/dobuy/index.html",
     "main.2c2c4b67.css.map": "/dobuy/static/css/main.2c2c4b67.css.map",
-    "main.01dae2b4.js.map": "/dobuy/static/js/main.01dae2b4.js.map",
+    "main.536e1ac1.js.map": "/dobuy/static/js/main.536e1ac1.js.map",
     "787.994511a4.chunk.js.map": "/dobuy/static/js/787.994511a4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c2c4b67.css",
-    "static/js/main.01dae2b4.js"
+    "static/js/main.536e1ac1.js"
   ]
 }
