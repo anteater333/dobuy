@@ -2,6 +2,7 @@
 // ref. https://stackoverflow.com/questions/67507183/proxy-is-not-working-in-deployed-react-project-to-github-but-works-locally
 
 export const apiAddr = "https://deg.anteater-lab.link/dobuy"
+// export const apiAddr = "http://localhost:4444" // for error handling
 
 export const getTitle = async (): Promise<string> => {
   const response = await (await fetch(`${apiAddr}/`, {method: 'GET', headers: {

@@ -233,7 +233,7 @@ export default function ToContainer() {
         <div className="main-to-title">To Do</div>
         <div className="main-to-list-scroll">
           <div className="main-to-list">
-            {!todoLoading ? (
+            {!todoLoading ? todoError ? <><span className="to-list-error-title">Error</span><br/><span className="to-list-error-msg">{todoError.message}</span></> : (
               todoData.allTodos.length ? (
                 todoData.allTodos
                   .slice()
@@ -332,6 +332,7 @@ export default function ToContainer() {
         </div>
         <div className="main-to-controller">
           <Button
+            disabled={!!todoError}
             onClick={() => {
               setIsInputMode(true);
               setIsTodoInput(true);
@@ -345,7 +346,7 @@ export default function ToContainer() {
         <div className="main-to-title">To Buy</div>
         <div className="main-to-list-scroll">
           <div className="main-to-list">
-            {!tobuyLoading ? (
+            {!tobuyLoading ? tobuyError ? <><span className="to-list-error-title">Error</span><br/><span className="to-list-error-msg">{tobuyError.message}</span></> : (
               tobuyData.allTobuys.length ? (
                 tobuyData.allTobuys
                   .slice()
@@ -446,6 +447,7 @@ export default function ToContainer() {
         </div>
         <div className="main-to-controller">
           <Button
+            disabled={!!tobuyError}
             onClick={() => {
               setIsInputMode(true);
               setIsTodoInput(false);

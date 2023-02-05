@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { checkGQL, getTitle, postRoot } from "../api";
 
@@ -37,7 +37,7 @@ export default function MainScreen() {
   return (
     <>
       <div className="main-header">
-        <span className="main-title">{query.data}</span>
+        <span className="main-title">{query.isLoading ? '간판 준비 중...' : query.isSuccess ? query.data : '서버가 죽었슴다 --;'}</span>
         {/* 
         <br />
 
